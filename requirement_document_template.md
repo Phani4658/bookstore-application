@@ -19,13 +19,13 @@
 - Features - book search, book filtering, add to cart, remove from cart, and order placement
 
     ##### Pages Information
-    | Pages        | Page Details                                                                            | Navigation                                                                                    |
-    | ------------ | ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-    | Home,        | Header- Links for  Home, Book List ,Cart  <br /> Banner - Heading, Explore Books, Image | "Home" in Header                                                                              |  
-    | Book List    | Header- Links for  Home, Book List ,Cart <br /> Book Item, Search, Filter               |  "Book List" in Header <br /> "Explore Books" Button <br /> "Back Button" in Book Details Page|
-    | Book Details | Detailed Info , Add to Cart Button, Back Button                                         | Each Book in Book Details should navigate to Book List|                                       |
-    | Cart         | Cart Items, Remove Button, Order Summary Checkout Info                                  |  Cart Link in Header <br /> Back Button in Checkout Page                                      | 
-    | Checkout     | Order Form(Personal Details, Order Summary,"Place Order" Button), Back Button           | Checkout Button in Cart                                                                       |
+    | Pages        | Page Details                                                                                  | Navigation                                                                                    |
+    | ------------ | ----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+    | Home,        | Header- Links for  Home, Book List ,Cart  <br /> Banner - Heading, Description, Explore Books | "Home" in Header                                                                              |  
+    | Book List    | Header- Links for  Home, Book List ,Cart <br /> Book Item, Search, Filter                     |  "Book List" in Header <br /> "Explore Books" Button <br /> "Back Button" in Book Details Page|
+    | Book Details | Detailed Info , Add to Cart Button, Back Button                                               | Each Book in Book Details should navigate to Book List|                                       |
+    | Cart         | Cart Items, Remove Button, Order Summary Checkout Info                                        |  Cart Link in Header <br /> Back Button in Checkout Page                                      | 
+    | Checkout     | Order Form(Personal Details, Order Summary,"Place Order" Button), Back Button                 | Checkout Button in Cart                                                                       |
 
 #### Nice to Have
 
@@ -55,6 +55,78 @@
 
 * Deploying the application on a hosting platform
 
+
+## Technical Details
+
+### Routes
+| Page         | Route        | Path       |
+|--------------|--------------|------------| 
+| Home         | Home         | /          |
+| Book List    | Book List    | /books     |
+| Book Details | Book Details | /books/:id |
+| Cart         | Cart         | /cart      | 
+| Checkout     | Checkout     | /checkout  |
+| Not Found    | Not Found    | /not-found |  
+
+### Routes & Components
+
+**Home**
+
+| Component | Details                                       | State              | API (IT Bookstore) |
+|-----------|-----------------------------------------------|--------------------|--------------------|
+| Home      | Banner - Heading, Description, Explore Books  | -                  | -                  |
+| Header    | Links for Home Page, Book List, Cart          | (Context Consumer) | -                  |
+
+**Book List**
+
+| Component     | Details                                       | State                               | API(IT Bookstore) | 
+|---------------|-----------------------------------------------|-------------------------------------|-------------------|
+| BookList      | List of Books                                 | apiStatus,booksData,priceRangeValue | /new              | 
+| Header        | Links for Home Page, Book List, Cart          | (Context Consumer)                  | -                 |
+| SearchInput   | Search (by Title, Author), "Search" Button    | searchInputValue                    | /search/{query}   | 
+| PriceRange    | Filter(by price), "Apply Filter" Button       | -                                   | -                 |
+| Book Item     | Book Items(title, subtitle, image, price)     | -                                   | -                 | 
+| Loader        |                                               | -                                   | -                 |
+| Error Message |                                               | -                                   | -                 | 
+
+
+**Book Details**
+
+| Component     | Details                                                                                    | State                                                                  | API(IT Bookstore) | 
+|---------------|--------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-------------------|
+| BookDetails   | Detailed Information - image,description,title,price , "Add to Cart" Button,"Back" Button  | apiStatus,bookDetailsData                                              | /books/{isbn}     | 
+| Header        | Links for Home Page, Book List, Cart                                                       | (Context Consumer)                                                     | -                 |
+| Loader        |                                                                                            | -                                                                      | -                 |
+| Error Message |                                                                                            | -                                                                      | -                 |
+
+
+**Cart**
+
+| Component | Details                                                        | State | API(IT BookStore) |
+|-----------|----------------------------------------------------------------|-------|-------------------|
+| Cart      | Cart Items, Order Summary, "Checkout" Button, "Remove Button"  | (Context Consumer) | -    |
+| Cart Item | Book Details , Number of copies, Delete button                 | (Context Consumer) | -    |
+| Header    | Links for Home Page, Book List, Cart                           | (Context Consumer) | -    |
+
+**Checkout**
+
+| Component       | Details                                                                                                                | State                                                   | API(IT Bookstore) | 
+|-----------------|----------------------------------------------------------------------------------------------------------------------- |---------------------------------------------------------|-------------------|
+| Checkout        | "Back" Button                                                                                                          | (Context Consumer), isOrderPlaced                       | -                 | 
+| UserDetailsForm | Order Form - Personal Details(first name, last name,Mobile Number, Email, Address, Place order button, Order Summary)  | name, address, phone, email, showValidationErrorMessage | -                 | 
+
+**NotFound** 
+
+| Component | Details                         | State              | API(IT Bookstore)   | 
+|-----------|---------------------------------|--------------------|---------------------|
+| NotFound  | -                               |  -                 | -                   | 
+| Header    | Links for Home, Book List, Cart | (Context Consumer) | -                   |
+
+**App**
+
+| Component | Details                                                                                          | State                                                                                   | API(IT Bookstore) | 
+|-----------|------------------------------------------------------------------------------------------------- |-----------------------------------------------------------------------------------------|-------------------|
+| App       |  -                                                                                               | cartList(context provider), Context: cartList,addToCart(),deleteFromCart(),resetCart()  | -                 |
 ## Resources
 
 ### Design files
