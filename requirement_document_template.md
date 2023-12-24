@@ -15,48 +15,57 @@
 
 #### Must Have
 
-    - Pages/Components - Home, Book Listing, Book Details, Shopping Cart, and Checkout pages
-    - Features - book search, book filtering, add to cart, remove from cart, and order placement
+- Pages/Components - Home, Book Listing, Book Details, Shopping Cart, and Checkout pages
+- Features - book search, book filtering, add to cart, remove from cart, and order placement
 
+    ##### Pages Information
+    | Pages        | Page Details                                                                            | Navigation                                                                                    |
+    | ------------ | ----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+    | Home,        | Header- Links for  Home, Book List ,Cart  <br /> Banner - Heading, Explore Books, Image | "Home" in Header                                                                              |  
+    | Book List    | Header- Links for  Home, Book List ,Cart <br /> Book Item, Search, Filter               |  "Book List" in Header <br /> "Explore Books" Button <br /> "Back Button" in Book Details Page|
+    | Book Details | Detailed Info , Add to Cart Button, Back Button                                         | Each Book in Book Details should navigate to Book List|                                       |
+    | Cart         | Cart Items, Remove Button, Order Summary Checkout Info                                  |  Cart Link in Header <br /> Back Button in Checkout Page                                      | 
+    | Checkout     | Order Form(Personal Details, Order Summary,"Place Order" Button), Back Button           | Checkout Button in Cart                                                                       |
 
 #### Nice to Have
 
-    - Authentication
-    - Unit Tests
+- Authentication
 
 ### Guidelines to develop a project
 
 #### Must Have
-
-    List the necessary guidelines to follow while developing the project, mentioned in the Assignment, if any
+* Use Github
+    * Create a new public repository on GitHub for the assignment.
+    * Commit your code regularly and include clear commit messages.
+    * Include a README file explaining the project setup, usage instructions, and any additional information.
+    * Ensure the repository is well-organized and easy to navigate.
+* It should be visually Appealing and user friendly.
+* It should Handle All sorts of Errors.
 
 #### Nice to Have
-
-    List the additional/suggested guidelines to follow while developing the project, mentioned in the Assignment, if any
+- Unit Tests
 
 ### Submission Instructions
 
 #### Must Have
 
-    - Create a new public repository on GitHub for the assignment.
-    - Commit your code regularly and include clear commit messages.
-    - Include a README file explaining the project setup, usage instructions, and any additional information.
-    - Ensure the repository is well-organized and easy to navigate.
+* Github Repository
 
 #### Nice to Have
 
-    - Deploying the application on a hosting platform
+* Deploying the application on a hosting platform
 
 ## Resources
 
 ### Design files
 
-    List the references of design files required for the Assignment
+Home ,  Book List, Book Details, Shopping Cart, Checkout
+* Reference : https://readster-template.webflow.io/ (Home ,  Book List, Book Details)
+- https://www.crossword.in/ (Book List, Cart , Checkout)
 
 ### APIs
-
-    List the APIs, providing any relevant endpoints, documentation links, or access keys, required for the Assignment if any
+* https://api.itbook.store/ (Book List, Book Details, Search) 
+* Filter - Implemented in Frontend
 
 ### Third-party packages
 
-    List the Third-party packages required for the Assignment, if any
