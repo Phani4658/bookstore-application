@@ -68,4 +68,7 @@ Home ,  Book List, Book Details, Shopping Cart, Checkout
 * Filter - Implemented in Frontend
 
 ### Third-party packages
-
+- React Router Dom
+- React Icons
+- rc-slider
+- React Loader Spinner
