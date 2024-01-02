@@ -1,0 +1,34 @@
+.book-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding:10px;
+}
+
+.book-item-title{
+    color:#000;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.book-item-price{
+    color:#000;
+}
+
+@media screen and (min-width:768px){
+    .book-item{
+        width: 300px;
+    }
+}
+
+
+@media screen and (min-width:1280px){
+    .book-item{
+        width: 350px;
+    }
+}

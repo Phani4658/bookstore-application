@@ -1,0 +1,62 @@
+.booklist-banner{
+    padding:10px 45px;
+    position: relative;
+    background-color: hsl(72, 9%, 89%);
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.booklist-title{
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.booklist-description{
+    max-width: 450px;
+}
+
+.triangle{
+    border-bottom: 40px solid #fff;
+    border-left: 40px solid rgba(255, 255, 255, .6);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.books-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.book-items-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    padding-top: 25px;
+}
+
+@media screen and (min-width:768px){
+    .triangle{
+        border-bottom-width: 60px;
+        border-left-width: 60px;
+    }
+    
+    .booklist-banner{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .book-items-container{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+}
