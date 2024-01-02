@@ -5,7 +5,7 @@ import BookItem from "../BookItem";
 import PriceRange from "../PriceRange";
 import SearchInput from "../SearchInput";
 import Loader from "../Loader";
-import ErrorMessage from "../../ErrorMessage";
+import ErrorMessage from "../ErrorMessage";
 
 const APIStatusConstants = {
   LOADING: "loading",
@@ -72,7 +72,6 @@ class BookList extends Component {
 
   renderBooksList = () => {
     const { apiStatus } = this.state;
-    console.log(apiStatus);
     switch (apiStatus) {
       case APIStatusConstants.LOADING:
         return <Loader />;
