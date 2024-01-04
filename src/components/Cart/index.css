@@ -1,0 +1,158 @@
+.cart-container {
+  margin-top: 40px;
+}
+
+.cart-main-heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.no-items-text {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.empty-cart {
+  max-width: 500px;
+}
+
+.back-to-shop-button {
+  background-color: transparent;
+  border: 0.5px solid #eaeaea;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #eaeaea;
+  padding: 10px 25px;
+  outline: none;
+  text-transform: uppercase;
+  margin-top: 15px;
+  transition: 0.5s;
+}
+
+.no-items-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  gap: 10px;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-right-part {
+  padding: 10px 20px;
+  border: 0.5px solid #eaeaea;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #eaeaea;
+  height: fit-content;
+}
+
+.cart-items-and-summary-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.order-summary-heading {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.taxes-text{
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.total-amount{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-btn{
+    color:#fff;
+    text-transform: uppercase;
+    width: 100%;
+    transition: 0.5s;
+    outline: none;
+}
+
+.checkout-btn:hover{
+    background-color: transparent;
+    color: #000;
+    border: 1px solid black;
+}
+
+
+.delivery-instructions{
+    width: 98%;
+    margin-top: 10px;
+    border-radius: 6px;
+    color: #616161;
+    border: 1px solid #dedede;
+    background: #ffffff;
+}
+
+.delivery-instructions-heading{
+    margin-top: 15px;
+}
+
+.back-to-shop-button:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+@media screen and (min-width: 767px) {
+  .cart-items-container {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  .cart-left-part {
+    flex-grow: 1;
+  }
+
+  .cart-items-and-summary-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .cart-right-part {
+    padding:20px 15px;
+  }
+
+  .order-summary-heading {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .total-amount{
+    margin-top: 25px;
+    font-size: 19px;
+  }
+
+  .taxes-text{
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+@media  screen and (min-width:1080px) {
+    .cart-left-part{
+        width: 70%;
+    }
+}
