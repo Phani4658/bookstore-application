@@ -1,0 +1,40 @@
+.details-form {
+  padding: 10px 20px;
+  padding-top: 40px;
+  order: 3;
+}
+
+.order-summary {
+  background-color: rgb(251, 237, 223);
+  height: 20px;
+  width: 100%;
+  order: 0;
+}
+
+.checkout-content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 767px) {
+  .checkout-content {
+    flex-direction: row;
+  }
+
+  .details-form {
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    order: 0;
+    margin-top: 100px;
+    padding-right: 40px ;
+  }
+
+  .order-summary {
+    width: 50%;
+    height: 92vh;
+    order: 1;
+  }
+}
+
+
