@@ -1,78 +1,77 @@
-.book-details{
+.book-details {
+  display: flex;
+  justify-content: center;
+  padding: 10px 25px;
+  flex-direction: column;
+}
+.book-image {
+  width: 350px;
+  align-self: center;
+}
+
+.book-author {
+  margin-bottom: 10px;
+}
+
+.book-title {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.book-price {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 13px 0;
+}
+
+.quantity-and-ATCbutton {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 10px 0px;
+  border-radius: 12px;
+  border: 1px solid black;
+  outline: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.atc-button {
+  padding: 10px 24px;
+  color: #fff;
+}
+
+.book-info {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.description-title {
+  margin: 10px 0px;
+  font-weight: 23px;
+}
+
+@media screen and (min-width: 768px) {
+  .book-details {
     display: flex;
-    justify-content: center;
-    padding:10px 25px;
-    flex-direction: column;
-}
-.book-image{
-    width: 350px;
-    align-self: center;
-}
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px 30px;
+  }
 
-.book-author{
-    margin-bottom: 10px;
-}
+  .book-image {
+    width: 60%;
+    max-width: 650px;
+    height: 100%;
+  }
 
-.book-title{
-    font-size: 22px;
-    margin-bottom: 4px;
-}
-
-.book-price{
-    font-size: 24px;
-    font-weight: 700;
-    margin: 13px 0;
-}
-
-.quantity-and-ATCbutton{
-    display: flex;
-    gap:10px;
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.quantity-input{
-    width: 60px;
-    padding:10px 0px;
-    border-radius: 12px;
-    border: 1px solid black;
-    outline: none;
-    font-size: 18px;
-    text-align: center;
-}
-
-.atc-button{
-    padding: 10px 24px;
-    color:#fff;
-    
-}
-
-.book-info{
-    font-size: 18px;
-    margin: 5px 0;
-}
-
-.description-title{
-    margin:10px 0px;
-    font-weight: 23px;
-}
-
-@media screen and (min-width:768px){
-    .book-details{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding:10px 30px;
-    }
-
-    .book-image{
-        width: 60%;
-        max-width: 650px;
-        height: 100%;
-    }
-
-    .book-details-container{
-        margin-top: 135px;
-        width: 60%;
-    }
+  .book-details-container {
+    margin-top: 135px;
+    width: 60%;
+  }
 }

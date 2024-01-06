@@ -6,6 +6,7 @@ import ErrorMessage from "../ErrorMessage";
 import "./index.css";
 import CartContext from "../../context/CartContext";
 
+// eslint-disable-next-line react-refresh/only-export-components
 const APIStatusConstants = {
   LOADING: "loading",
   FAILURE: "failure",

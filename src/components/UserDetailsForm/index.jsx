@@ -2,8 +2,12 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import "./index.css";
 import { Link } from "react-router-dom";
 
-const UserDetailsForm = () => {
-  console.log("Hello");
+// eslint-disable-next-line react/prop-types
+const UserDetailsForm = ({ onClickCheckout, emptyCart }) => {
+  const placeOrder = () => {
+    onClickCheckout();
+    emptyCart();
+  };
   return (
     <form className="user-form">
       <div>
@@ -28,7 +32,9 @@ const UserDetailsForm = () => {
         </div>
         <input type="text" placeholder="Phone" required />
         <div className="buttons-container">
-          <button className="place-order-button">Place Order</button>
+          <button className="place-order-button" onClick={placeOrder}>
+            Place Order
+          </button>
           <Link to="/cart">
             <button className="return-button">
               <MdKeyboardArrowLeft /> Return to Cart

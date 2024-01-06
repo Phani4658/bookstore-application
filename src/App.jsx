@@ -38,6 +38,11 @@ class App extends Component {
     }
   };
 
+
+  emptyCart = () => {
+    this.setState({cartItems: []})
+  }
+
   deleteCartItem = (isbn13) => {
     const { cartItems } = this.state;
     const productDetails = cartItems.find((item) => item.isbn13 === isbn13);
