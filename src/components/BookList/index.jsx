@@ -14,7 +14,12 @@ const APIStatusConstants = {
 };
 
 class BookList extends Component {
-  state = { booksList: [], apiStatus: APIStatusConstants.LOADING };
+  state = {
+    booksList: [],
+    filteredBooks: [],
+    apiStatus: APIStatusConstants.LOADING,
+    priceRange: [0, 0],
+  };
 
   fetchBooks = async () => {
     const apiUrl = "https://api.itbook.store/1.0/new";
@@ -23,9 +28,17 @@ class BookList extends Component {
       const response = await fetch(apiUrl);
       if (response.ok) {
         const data = await response.json();
+        const newBookList = data.books.map((bookDetails) => {
+          return {
+            ...bookDetails,
+            numericPrice: parseFloat(bookDetails.price.substring(1)),
+          };
+        });
+        const numericPrices = newBookList.map((book) => book.numericPrice);
         this.setState({
-          booksList: data.books,
+          booksList: newBookList,
           apiStatus: APIStatusConstants.SUCCESS,
+          priceRange: [Math.min(...numericPrices), Math.max(...numericPrices)],
         });
       } else {
         this.setState({ booksList: APIStatusConstants.FAILURE });
@@ -59,11 +72,26 @@ class BookList extends Component {
     }
   };
 
+  fliterBooks = () => {
+    const { priceRange, booksList } = this.state;
+    const filteredBooks = booksList.filter(
+      (book) =>
+        book.numericPrice >= priceRange[0] && book.numericPrice <= priceRange[1]
+    );
+
+    console.log(filteredBooks)
+    this.setState({ filteredBooks });
+  };
+
   renderSuccessView = () => {
-    const { booksList } = this.state;
+    const { booksList, filteredBooks } = this.state;
+    console.log(filteredBooks)
+    const booksToDisplay = filteredBooks.length > 0 ? filteredBooks : booksList;
+    console.log(booksToDisplay)
+
     return (
       <ul className="books-container">
-        {booksList.map((book) => (
+        {booksToDisplay.map((book) => (
           <BookItem bookDetails={book} key={book.isbn13} />
         ))}
       </ul>
@@ -84,8 +112,28 @@ class BookList extends Component {
     }
   };
 
+  updateMinRange = (minValue) => {
+    minValue = parseInt(minValue);
+    minValue = Number.isNaN(minValue) ? 0 : minValue;
+    const { priceRange } = this.state;
+    const newPriceRange = [minValue, priceRange[1]];
+    this.setState({ priceRange: newPriceRange }, this.fliterBooks);
+  };
+
+  updateMaxRange = (maxValue) => {
+    maxValue = parseInt(maxValue);
+    maxValue = Number.isNaN(maxValue) ? 0 : maxValue;
+    const { priceRange } = this.state;
+    const newPriceRange = [priceRange[0], maxValue];
+    this.setState({ priceRange: newPriceRange }, this.fliterBooks);
+  };
+
+  updateRange = (range) => {
+    this.setState({ priceRange: range }, this.fliterBooks);
+  };
+
   render() {
-    const {apiStatus} = this.state;
+    const { apiStatus, priceRange } = this.state;
     return (
       <>
         <Header />
@@ -98,9 +146,14 @@ class BookList extends Component {
           <div className="triangle"></div>
         </div>
         <div className="search-and-booklist-container">
-          <SearchInput searchBooks={this.searchBooks} apiStatus={apiStatus}/>
+          <SearchInput searchBooks={this.searchBooks} apiStatus={apiStatus} />
           <div className="book-items-container">
-            <PriceRange />
+            <PriceRange
+              priceRange={priceRange}
+              updateMaxRange={this.updateMaxRange}
+              updateMinRange={this.updateMinRange}
+              updateRange={this.updateRange}
+            />
             {this.renderBooksList()}
           </div>
         </div>

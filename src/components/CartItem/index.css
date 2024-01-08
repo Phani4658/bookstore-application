@@ -25,7 +25,7 @@ ul{
 
 .cart-item-book-title{
     font-size: 18px;
-    max-width: 55%;
+    width: 55%;
 }
 
 .cart-item-book-price{

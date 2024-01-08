@@ -4,15 +4,11 @@ import UserDetailsForm from "../UserDetailsForm";
 import "./index.css";
 import CartContext from "../../context/CartContext";
 import CheckoutItem from "../CheckoutItem";
-import { Navigate,Link } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 
 class Checkout extends Component {
   state = {
     isOrderPlaced: false,
-  };
-
-  onClickCheckout = () => {
-    this.setState((prevState) => ({ isOrderPlaced: !prevState.isOrderPlaced }));
   };
 
   successOrderPlaced = () => {
@@ -23,7 +19,7 @@ class Checkout extends Component {
           className="empty-cart"
         />
         <h3 className="no-items-text">Order Placed Successfully</h3>
-        <Link to = "/books">
+        <Link to="/books">
           <button className="back-to-shop-button">Continue Shopping</button>
         </Link>
       </div>
@@ -35,8 +31,15 @@ class Checkout extends Component {
     return (
       <CartContext.Consumer>
         {(value) => {
-          const { cartList,emptyCart } = value;
-          if (cartList.length === 0) return <Navigate to="/" />;
+          const { cartList, emptyCart } = value;
+          const onClickCheckout = () => {
+            emptyCart();
+            this.setState((prevState) => ({
+              isOrderPlaced: !prevState.isOrderPlaced,
+            }));
+          };
+
+          if (!isOrderPlaced && cartList.length === 0) return <Navigate to="/" />;
           let totalAmount = 0.0;
           cartList.map((book) => {
             totalAmount += book.numericPrice * book.quantity;
@@ -50,7 +53,10 @@ class Checkout extends Component {
               ) : (
                 <div className="checkout-content">
                   <div className="details-form">
-                    <UserDetailsForm onClickCheckout={this.onClickCheckout} emptyCart={emptyCart} />
+                    <UserDetailsForm
+                      onClickCheckout={onClickCheckout}
+                      emptyCart={emptyCart}
+                    />
                   </div>
                   <div className="order-summary">
                     <div className="summary-container">

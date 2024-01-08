@@ -3,13 +3,12 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-const UserDetailsForm = ({ onClickCheckout, emptyCart }) => {
+const UserDetailsForm = ({ onClickCheckout }) => {
   const placeOrder = () => {
     onClickCheckout();
-    emptyCart();
   };
   return (
-    <form className="user-form">
+    <form className="user-form" onSubmit={placeOrder}>
       <div>
         <h4 className="user-form-heading">Contact</h4>
         <input type="email" placeholder="Email" required />
@@ -32,7 +31,7 @@ const UserDetailsForm = ({ onClickCheckout, emptyCart }) => {
         </div>
         <input type="text" placeholder="Phone" required />
         <div className="buttons-container">
-          <button className="place-order-button" onClick={placeOrder}>
+          <button className="place-order-button" type="submit">
             Place Order
           </button>
           <Link to="/cart">
