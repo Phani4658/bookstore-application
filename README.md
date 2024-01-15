@@ -22,8 +22,7 @@ Welcome to the React BookStore Application! This application is a simple yet pow
 
 - Link : [https://bookstore-application-bice.vercel.app/](https://bookstore-application-bice.vercel.app/)
 
-- Video
-<iframe width="640" height="422" src="https://www.loom.com/embed/180d065a96ec4c75b0b044c16e751cb6?sid=6573d1e2-3b3a-4a2f-8ef6-203fc181f8d6" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+- Video : [Click here for Demo video](https://www.loom.com/embed/180d065a96ec4c75b0b044c16e751cb6?sid=6573d1e2-3b3a-4a2f-8ef6-203fc181f8d6)
 
 ## Installation
 
