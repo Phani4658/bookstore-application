@@ -5,6 +5,7 @@ Welcome to the React BookStore Application! This application is a simple yet pow
 ## Table of Contents
 
 - [Features](#features)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
@@ -16,6 +17,13 @@ Welcome to the React BookStore Application! This application is a simple yet pow
 3. **Book Details:** View detailed information about a specific book, including a summary and price.
 4. **Shopping Cart:** Add books to the shopping cart for a seamless checkout experience.
 5. **Responsive Design:** Enjoy a consistent user experience across various devices, including desktop and mobile.
+
+## Demo
+
+- Link : [https://bookstore-application-bice.vercel.app/](https://bookstore-application-bice.vercel.app/)
+
+- Video
+<iframe width="640" height="422" src="https://www.loom.com/embed/180d065a96ec4c75b0b044c16e751cb6?sid=6573d1e2-3b3a-4a2f-8ef6-203fc181f8d6" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Installation
 
